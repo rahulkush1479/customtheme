@@ -1,0 +1,834 @@
+<!--
+ API Documentation HTML Template  - 1.0.1
+ Copyright © 2016 Florian Nicolas
+ Licensed under the MIT license.
+ https://github.com/ticlekiwi/API-Documentation-HTML-Template
+ !-->
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>API - Documentation</title>
+    <meta name="description" content="">
+    <meta name="author" content="ticlekiwi">
+
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/hightlightjs-dark.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Source+Code+Pro:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" media="all">
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="left-menu">
+        <div class="content-logo">
+            <div class="logo">
+                <img alt="platform by Emily van den Heever from the Noun Project"
+                    title="platform by Emily van den Heever from the Noun Project" src="images/logo.png" height="32" />
+                <span>Custom theme on wordpress</span>
+            </div>
+            <button class="burger-menu-icon" id="button-menu-mobile">
+                <svg width="34" height="34" viewBox="0 0 100 100">
+                    <path class="line line1"
+                        d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058">
+                    </path>
+                    <path class="line line2" d="M 20,50 H 80"></path>
+                    <path class="line line3"
+                        d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <div class="mobile-menu-closer"></div>
+        <div class="content-menu">
+            <div class="content-infos">
+                <div class="info"><b>Version:</b> 1.0.5</div>
+                <div class="info"><b>Last Updated:</b> 15th Sep, 2021</div>
+            </div>
+            <ul>
+                <li class="scroll-to-link active" data-target="content-get-started">
+                    <a>GET STARTED</a>
+                </li>
+                <li class="scroll-to-link" data-target="content-get-characters">
+                    <a>Get Characters</a>
+                </li>
+                <li class="scroll-to-link" data-target="content-errors">
+                    <a>notes</a>
+                </li>
+                <li class="scroll-to-link" data-target="content-notes">
+                    <a>notes</a>
+                </li>
+                <li class="scroll-to-link " data-target="content-notes2">
+                    <a>notes</a>
+                </li>
+                <li class="scroll-to-link" data-target="content-notes3">
+                    <a>notes</a>
+                </li>
+                <li class="scroll-to-link" data-target="content-notes4">
+                    <a>notes</a>
+                </li>
+                <li class="scroll-to-link" data-target="content-notes5">
+                    <a>notes</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content-page">
+        <div class="content-code"></div>
+        <div class="content  overflow-hidden">
+
+            <div class="overflow-hidden content-section" id="content-get-started">
+                <!-- ///step1 -->
+                <h1>Get started</h1>
+                <div class="row">
+                    <div class="col-6">
+                        <h2 class="w-100">1. WordPress Theme Essential Files</h2>
+                        <p class="menseched">1. style.css (Theme Info & Styles)</p>
+                        <p class="menseccont">style.css -> This file contains the theme information and styles.</p>
+                    </div>
+
+                    <pre class=" mt-5">
+<code class=" py-3 fs-6">
+/*
+Theme Name: My Custom Theme  
+Theme URI: https://example.com  
+Author: Your Name  
+Author URI: https://yourwebsite.com  
+Description: A custom theme designed for my website.  
+Version: 1.0  
+*/  
+
+</code>
+</pre>
+                </div>
+
+                <!-- ///step2 -->
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mensec">
+                            <p class="menseched">2. index.php (Main Template File)</p>
+                            <p class="menseccont">index.php: The main template file. For now, you can add</p>
+                        </div>
+
+                    </div>
+                    <div class="">
+                        <pre>
+ &lt;!DOCTYPE html&gt;  
+ &lt;html &lt;?php language_attributes(); ?&gt;&gt;  
+ &lt;head&gt;  
+     &lt;meta charset=&lt;?php bloginfo('charset'); ?&gt;&gt;  
+     &lt;title&gt;&lt;?php bloginfo('name'); ?&gt;&lt;/title&gt;  
+     &lt;link rel=&quot;stylesheet&quot; href=&lt;?php bloginfo('stylesheet_url'); ?&gt;&gt;  
+     &lt;?php wp_head(); ?&gt;  
+ &lt;/head&gt;  
+ &lt;body &lt;?php body_class(); ?&gt;&gt;  
+     &lt;h1&gt;&lt;?php bloginfo('name'); ?&gt;&lt;/h1&gt;  
+     &lt;p&gt;&lt;?php bloginfo('description'); ?&gt;&lt;/p&gt;  
+     &lt;?php wp_footer(); ?&gt;  
+ &lt;/body&gt;  
+ &lt;/html&gt;
+ </pre>
+                    </div>
+                </div>
+                <!-- ///step3 -->
+                <div>
+                    <p class="menseched">3.Theme Activation</p>
+                    <ul class="text-dark">
+                        <li> Log in to your WordPress admin dashboard. </li>
+                        <li> Navigate to Appearance > Themes.</li>
+                        <li>You should see your theme listed. Activate it.</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="overflow-hidden content-section" id="content-get-characters">
+
+                <!-- ///step4 -->
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mensec">
+                            <p class="menseched">4.Add Template Files</p>
+                            <p>Depending on your site's structure, you’ll need various template files to control
+                                different pages:</p>
+                            <ul class="text-dark w-100">
+                                <li> <span class="text-success fs-6 fw-bolid border-bottom">header.php:</span> Contains
+                                    the code for the site’s header.</li>
+                                <li> <span class="text-success fs-6 fw-bolid border-bottom">footer.php:</span> Contains
+                                    the code for the site’s footer.</li>
+                                <li><span class="text-success fs-6 fw-bolid border-bottom">sidebar.php:</span> If your
+                                    theme has a sidebar. - Opotionnsl</li>
+                                <li><span class="text-success fs-6 fw-bolid border-bottom">page.php:</span> Template for
+                                    standard pages.</li>
+                                <li><span class="text-success fs-6 fw-bolid border-bottom">single.php: </span>Template
+                                    for single posts.</li>
+                            </ul>
+                            <p>functions.php: A file where you’ll register theme features like menus, widgets, and more.
+                                php
+                            </p>
+                        </div>
+                    </div>
+
+                    <pre class=" ">
+<code class="py-3 ">
+function my_custom_theme_scripts() {  
+wp_enqueue_style('style', get_stylesheet_uri());  
+}  
+add_action('wp_enqueue_scripts', 'my_custom_theme_scripts'); 
+
+(for setup ----)
+
+function my_custom_theme_setup() {  
+register_nav_menus(array(  
+'primary' => __('Primary Menu', 'my-custom-theme'),  
+));  
+}  
+add_action('after_setup_theme', 'my_custom_theme_setup'); 
+</code>
+</pre>
+
+
+                </div>
+                <!-- ///step5 -->
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mensec">
+                            <p class="menseched">5. Include Header and Footer in Template Files</p>
+                            <p>To include the header.php and footer.php in your template files like index.php, use the
+                                following functions:</p>
+                            <ul class="text-dark w-100">
+
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <pre class="mt-3">
+<code class="my-3">
+&lt;?php get_header(); ? &gt; 
+---  Content --- 
+&lt;?php get_footer(); ? &gt; 
+</code>
+</pre>
+
+                </div>
+                <!-- ///step6 -->
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mensec">
+                            <p class="menseched">6. Create a Custom Homepage</p>
+                            <p>To create a custom homepage, you can create a front-page.php template.</p>
+                            <ul class="text-dark w-100">
+                                <li>In <span class="text-success fs-6 fw-bolid border-bottom">Settings > Reading,</span>
+                                    set
+                                    your homepage to display a static page and choose your custom home page.</li>
+
+                                <li class="fs-6 fw-bolder text-dark py-3">
+                                    Add Theme Features
+                                </li>
+
+                                <li> <span class="text-success fs-6 fw-bolid border-bottom">Custom Logo: </span>Add this
+                                    in functions.php.</li>
+
+                                <li><span class="text-success fs-6 fw-bolid border-bottom">Custom theme: </span> Post
+                                    Thumbnails (Featured Image):</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <pre class="mt-3">
+<code class="my-3">
+---for custom logo--- 
+
+ add_theme_support('custom-logo'); 
+
+--- for  Post Thumbnails: --- 
+
+  add_theme_support('post-thumbnails');  
+</code>
+</pre>
+                </div>
+
+
+            </div>
+            <div class="overflow-hidden content-section" id="content-errors">
+                <!-- ///step7 -->
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mensec">
+                            <p class="menseched">7. Dynamic Content with WordPress Loop
+                            </p>
+                            <p>Use WordPress’s loop to display posts or content dynamically:</p>
+                            <ul class="text-dark w-100">
+
+                            </ul>
+
+                        </div>
+                    </div>
+                    <pre class="mt-3">
+<code class="my-3">
+&lt;?php if ( have_posts() ) : ?&gt;
+&lt;ul&gt;
+&lt;?php while ( have_posts() ) : the_post(); ?&gt;
+&lt;li&gt;
+&lt;h2&gt;&lt;a href="&lt;?php the_permalink(); ?&gt;"&gt; &lt;?php the_title();?&gt;
+&lt;/a&gt; &lt;/h2&gt;
+&lt;p>&lt;?php the_excerpt(); ?&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;?php endwhile; ?&gt;
+&lt;/ul&gt;
+&lt;?php else : ?&gt;
+&lt;p>No posts found.&lt;/p&gt;
+&lt;?php endif; ?&gt;
+</code>
+</pre>
+                </div>
+                <!-- ///step 8 -->
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mensec">
+                            <p class="menseched">8. Add Custom CSS and JavaScript
+                            </p>
+
+                            <ul class="text-dark w-100">
+                                <p>You can add custom CSS and JavaScript by enqueueing them in <span
+                                        class="text-success fs-6 fw-bolid border-bottom">functions.php: </span></p>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <pre class="mt-3">
+<code class="my-3">
+
+function theme_custom_scripts() {  
+wp_enqueue_style('main-css', get_template_directory_uri() . 
+'/assets/css/main.css');  
+wp_enqueue_script('custom-js', get_template_directory_uri() .
+'/assets/js/custom.js', array('jquery'), null, true);  
+}  
+add_action('wp_enqueue_scripts', 'theme_custom_scripts');  
+
+</code>
+</pre>
+                </div>
+                <!-- ///step9 -->
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mensec">
+                            <p class="menseched">9. Develop Additional Templates
+                            </p>
+                            <p>Depending on the site, you can create other templates like:</p>
+                            <ul class="text-dark w-100">
+                                <li><span class="text-success fs-6 fw-bolid border-bottom">archive.php:
+                                    </span> For displaying archive pages (categories, tags, etc.).</li>
+                                <li><span class="text-success fs-6 fw-bolid border-bottom"> search.php:
+                                    </span> For search results.</li>
+                                <li><span class="text-success fs-6 fw-bolid border-bottom"> 404.php:
+                                    </span> For handling 404 errors.</li>
+
+                                <li><span class="text-success fs-6 fw-bolid border-bottom"> Screenshot.png
+                                    </span> for theme thumbnail </li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- ///step10 -->
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mensec">
+                            <p class="menseched">10. Every single page content
+                            </p>
+
+                            <ul class="text-dark w-100">
+                                <li> <span class="text-success fs-6 fw-bolid border-bottom">header.php:</span> Contains
+                                    the code for the site’s header.</li>
+                                <li> <span class="text-success fs-6 fw-bolid border-bottom">footer.php:</span> Contains
+                                    the code for the site’s footer.</li>
+                                <li> <span class="text-success fs-6 fw-bolid border-bottom">page.php: </span> Template
+                                    for standard pages.</li>
+                                <li> <span class="text-success fs-6 fw-bolid border-bottom">single.php:</span>Template
+                                    for single posts.</li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                    <pre class="mt-3">
+<code class="my-3">
+---------------for header.php: ---------------
+
+&lt;html &lt;?php language_attributes(); ?&gt;
+&lt;head&gt;
+&lt;meta charset="&lt;?php bloginfo('charset'); ?&gt;"&gt;
+&lt;title>&lt;?php bloginfo('name'); ?&gt;&lt;/title&gt;
+
+&lt;?php wp_head(); ?&gt;
+&lt;/head&gt;
+&lt;body &lt;?php body_class(); ?&gt;
+&lt;header&gt;My Header&lt;/header&gt;
+
+
+---------------for footer.php: ---------------
+
+&lt;footer&gt;My footer content&lt;/footer&gt;
+&lt;/Body&gt;
+&lt;/html&gt;
+
+---------------for page.php: ---------------
+
+
+&lt;?php get_header(); ?&gt;
+
+&lt;h1&gt;&lt;?php the_title(); ?&gt;&lt;/h1&gt;
+&lt;?php the_content(); ?&gt;
+
+
+&lt;?php get_footer(); ?&gt;
+
+
+---------------for Single.php: ------------------
+
+
+&lt;?php get_header(); ?&gt;
+
+&lt;?php if(have_posts()) : ?&gt;
+
+&lt;?php $thumbnail_url = get_the_post_thumbnail_url();
+?&gt;
+&lt;div class="card"&gt;
+&lt;?php if(has_post_thumbnail()){?&gt;
+&lt;img src="&lt;?php echo $thumbnail_url; ?&gt;" class="card-img-top" alt="..."&gt;
+&lt;?php } ?&gt;
+&lt;div class="card-body"&gt;
+&lt;h5 class="card-title">&lt;?php the_title(); ?>&lt;/h5&gt;
+&lt;?php the_content(); ?&gt;
+
+&lt;p class="small text-muted mt-4">&lt;?php echo get_the_date(); ?>&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;?php else :
+?&gt;
+No Post Found
+&lt;?php endif; ?&gt;
+&lt;?php get_footer(); ?&gt;
+
+</code>
+</pre>
+                </div>
+
+            </div>
+
+            <div class="overflow-hidden content-section" id="content-notes">
+                <div>
+
+                    <div>
+                        <p class="menseched">
+                           11. To Link Header on any page
+                            &lt; ?php get_header(); ?&gt;
+                        </p>
+                        <p class="menseched">
+                          12. To Link footer on any page
+                            &lt; ?php get_footer(); ?&gt;
+                        </p>
+                        <p class="menseched">
+                          13. Index.php - for All Posts
+                        </p>
+                        <p class="menseched">
+                          14. Archive.php for Category Posts
+                        </p>
+                    </div>
+
+                    <pre>
+<code>
+&lt;?php get_header(); ?>&gt;
+
+&lt;?php if(have_posts()) : ?>&gt;
+&lt;?php while(have_posts()) : the_post();  ?>&gt;
+    
+ &lt;?php endwhile; ?>&gt;
+&lt;?php else :
+?>&gt;
+No Post Found
+&lt;?php endif; ?>&gt;
+&lt;?php get_footer(); ?>&gt;
+</code>
+</pre>
+
+                </div>
+
+            </div>
+            <div class="overflow-hidden content-section" id="content-notes2">
+                <!-- ///step15 -->
+                <div>
+                    <p class="menseched">
+                      15.  Get Title - &lt;?php the_title(); ?&gt; - Direct Title Print
+                        &lt;?php get_the_title(); ?&gt; - Title Get ( Not for Display )
+
+                    </p>
+                    <p class="menseched">
+                      16.  Get Content - the_content();
+                        Get_the_content();
+
+                    </p>
+
+                    <pre>
+<code>
+&lt;?php get_header(); ?&gt;
+
+&lt;?php if(have_posts()) : ?&gt;
+&lt;?php while(have_posts()) : the_post();  ?&gt;
+&lt;div class="border border-3 bg-light my-4 p-4"&gt;
+ &lt;?php the_permalink(); ?&gt;
+ &lt;?php the_title(); ?&gt;
+ &lt;?php // get_the_title(); ?&gt;
+ &lt;?php the_content(); ?&gt;
+ &lt;?php // get_the_content(); ?&gt;
+ &lt;?php // the_post_thumbnail(); ?&gt;
+ &lt;?php // get_the_post_thumbnail(); ?&gt;
+ &lt;?php echo $thumbnail_url = get_the_post_thumbnail_url(); ?&gt;
+ &lt;?php    
+ if ( has_post_thumbnail() ) {
+    $thumbnail_url = get_the_post_thumbnail_url();
+  echo $thumbnail_url;
+ }
+?&gt;
+&lt;?php echo get_the_date(); ?&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;?php
+// Get the current post ID (if inside the loop) 
+or set a specific post ID
+// Or use a specific post ID,
+ e.g., $post_id = 123;
+
+$post_id = get_the_ID(); 
+
+
+// Get the post object
+$post = get_post( $post_id );
+
+
+// Post title
+$title = get_the_title( $post_id );
+
+
+// Post content
+$content = apply_filters( 'the_content', $post->post_content );
+
+
+// Post excerpt
+$excerpt = get_the_excerpt( $post_id );
+
+
+// Post author ID
+$author_id = $post->post_author;
+
+
+// Author name
+$author_name = get_the_author_meta( 'display_name', $author_id );
+
+
+// Post date
+$date = get_the_date( '', $post_id );
+
+
+// Post categories (returns an array of category objects)
+$categories = get_the_category( $post_id );
+
+
+// Post tags (returns an array of tag objects)
+$tags = get_the_tags( $post_id );
+
+
+// Post featured image URL
+$thumbnail_url = get_the_post_thumbnail_url( $post_id, 'full' );
+
+
+// Post permalink
+$permalink = get_permalink( $post_id );
+
+// Displaying the details
+echo '&lt;h1&gt;' . esc_html( $title ) . '&lt;/h1&gt;';
+echo '&lt;p&gt;By ' . esc_html( $author_name ) . ' on ' . 
+esc_html( $date ) . '&lt;/p&gt;';
+
+echo '&lt;p&gt;' . esc_html( $excerpt ) . '&lt;/p&gt;';
+echo '&lt;div&gt;' . $content . '&lt;/div&gt;';
+echo '&lt;p&gt;Categories: ';
+if ( ! empty( $categories ) ) {
+    foreach ( $categories as $category ) {
+        echo '&lt;a href="' . esc_url( get_category_link( 
+            $category->term_id ) ) . '"&gt;' . esc_html( 
+                $category->name ) . '&lt;/a&gt;, ';
+    }
+}
+echo '&lt;/p&gt;';
+
+
+echo '&lt;p&gt;Tags: ';
+if ( ! empty( $tags ) ) {
+    foreach ( $tags as $tag ) {
+        echo '&lt;a href="' . esc_url( get_tag_link( 
+            $tag->term_id ) ) . '"&gt;' . esc_html( 
+                $tag->name ) . '&lt;/a&gt;, ';
+    }
+}
+echo '&lt;/p&gt;';
+
+if ( $thumbnail_url ) {
+    echo '&lt;img src="' . esc_url( $thumbnail_url ) . 
+    '" alt="' . esc_attr( $title ) . '&gt;';
+}
+
+
+echo '&lt;&gt;&lt;a href="' . esc_url( $permalink ) . 
+x'&gt;Read more&lt;/&gt;&lt;/&gt;';
+?>
+
+
+        &lt;?php endwhile; &gt;
+    &lt;?php else :
+     &gt;
+     No Post Found
+     &lt;?php endif; &gt;
+ &lt;?php get_footer(); ?&gt; 
+</code>
+</pre>
+
+
+                </div>
+
+
+
+            </div>
+
+            <div class="overflow-hidden content-section" id="content-notes3">
+                <p class="menseched">
+                  17.  IN DESIGN - &lt;?php get_header(); ?&gt;
+                </p>
+                <pre>
+<code class="pt-3">
+&lt;?php if(have_posts()) : ?&gt;
+&lt;div class="row g-4"&gt;
+  &lt;?php while(have_posts()) : the_post();  ?&gt;
+  &lt;div class="col-lg-4 col-md-6 col-12"&gt;   
+  &lt;?php $thumbnail_url = get_the_post_thumbnail_url();
+  //  content
+  $content = get_the_content();
+ $withouthtml = strip_tags($content);
+ $sho&gt;tContent = substr($withouthtml, 0, 100);
+  ?>
+&lt;div class="card" style="width: 18rem;"&gt;
+  &lt;?php if(has_post_thumbnail()){?&gt;
+  &lt;img src="&lt;?php echo $thumbnail_url; ?&gt;" 
+  class="card-img-top" alt="..."&gt;
+  &lt;?php } ?&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;&lt;?php the_title();
+     ?&gt;&lt;/h5&gt;
+    &lt;p class="card-text"&gt;&lt;?php echo $shortContent; 
+    ?&gt;...&lt;/p&gt;
+    &lt;a href="&lt;?php the_permalink(); ?>" class="btn btn-primary"
+    &gt;Read More&lt;/a&gt;
+    &lt;p class="small text-muted mt-4">&lt;?php echo get_the_date(); 
+    ?&gt;&lt;/p&gt;
+  &lt;/div&gt;
+    &lt;/div&gt;
+
+
+  &lt;?php endwhile; ?&gt;
+&lt;/div&gt;
+&lt;?php else :   
+?&gt;
+No Post Found
+&lt;?php endif; ?&gt;
+&lt;?php get_footer(); ?&gt;
+
+
+</code>
+
+</pre>
+
+
+
+
+            </div>
+            <div class="overflow-hidden content-section" id="content-notes4">
+                <!-- ///step18 -->
+                <div>
+                    <p class="menseched">18. Custom Post TYpe -</p>
+                  <ul class="ulli">
+                    <li> Plugin - ACF, CPT</li>
+                    <li> Function.php - - // Register Custom Post Type</li>
+                    <li> To Create Custom Archive page for custom post type - </li>
+                    <li>
+                        ex . News
+                        Archive-news.php
+
+                    </li>
+                    <li> To Create Custom Single Page for Custom Post type - 
+                    </li>
+                    <li> single-news.php</li>
+                  </ul>
+                </div>
+
+
+                <pre>
+ <code>
+// Register Custom Post Type
+function create_books_post_type() {
+ register_post_type('book', array(
+     'labels' => array(
+         'name' => __('Books'),
+         'singular_name' => __('Book')
+     ),
+     'public' => true,
+     'has_archive' => true,
+     'supports' => array('title', 'editor', 'thumbnail'),
+     'menu_icon' => 'dashicons-book', 
+     // Book icon in the admin menu
+ ));
+ add_action('init', 'create_books_post_type');
+ function create_book_genre_taxonomy() {
+     register_taxonomy('book category', 'book', array(
+         'labels' => array(
+             'name' => __('Book Categories'),
+             'singular_name' => __('Book Category')
+         ),
+         'public' => true,
+         'hierarchical' => true, // Set to true for 
+         category-like behavior (parent-child)
+     ));
+ }
+ add_action('init', 'create_book_genre_taxonomy');
+
+       
+
+ &lt;?php get_header(); ?&gt;
+
+
+ &lt;?php if(have_posts()) : ?&gt;
+ &lt;div class="row g-4"&gt;
+   &lt;?php while(have_posts()) : the_post();  ?&gt;
+   &lt;div class="col-lg-4 col-md-6 col-12"&gt;
+   &lt;?php $thumbnail_url = get_the_post_thumbnail_url();
+   //  content
+   $content = get_the_content();
+  $withouthtml = strip_tags($content);
+  $shortContent = substr($withouthtml, 0, 100);
+   ?&gt;
+ &lt;div class="card" style="width: 18rem;"&gt;
+   &lt;?php if(has_post_thumbnail()){?&gt;
+   &lt;img src="&lt;?php echo $thumbnail_url; ?&gt;" 
+   class="card-img-top" alt="..."&gt;
+   &lt;?php } ?&gt;
+   &lt;div class="card-body"&gt;
+     &lt;h5 class="card-title"&gt;&lt;?php the_title();
+      ?&gt;&lt;/h5&gt;
+     &lt;p class="card-text"&gt;&lt;?php echo $shortContent;
+      ?&gt;...&lt;/p&gt;
+     &lt;a href="&lt;?php the_permalink(); ?&gt;" class="btn 
+        btn-primary"&gt;Read More&lt;/a&gt;
+     &lt;p class="small text-muted mt-4">&lt;?php echo get_the_date();
+       ?&gt;&lt;/p&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;?php endwhile; ?&gt;
+&lt;/div&gt;
+&lt;?php else :
+?&gt;
+No Post Found
+&lt;?php endif; ?&gt;
+&lt;?php get_footer(); ?&gt;
+
+ </code>   
+</pre>
+
+            </div>
+
+
+        </div>
+
+    </div>
+    <!-- Github Corner Ribbon - to remove (Ribbon created with : http://tholman.com/github-corners/ )-->
+    <!-- <a href="https://github.com/ticlekiwi/API-Documentation-HTML-Template" class="github-corner"
+        aria-label="View source on Github" title="View source on Github">
+        <svg width="80" height="80"
+            viewBox="0 0 250 250"
+            style="z-index:99999; fill:#70B7FD; color:#fff; position: fixed; top: 0; border: 0; right: 0;"
+            aria-hidden="true">
+            <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+            <path
+                d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+                fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+            <path
+                d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+                fill="currentColor" class="octo-body"></path>
+        </svg>
+    </a> -->
+
+
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <style>
+        .github-corner:hover .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+
+        @keyframes octocat-wave {
+
+            0%,
+            100% {
+                transform: rotate(0)
+            }
+
+            20%,
+            60% {
+                transform: rotate(-25deg)
+            }
+
+            40%,
+            80% {
+                transform: rotate(10deg)
+            }
+        }
+
+        @media (max-width:500px) {
+            .github-corner:hover .octo-arm {
+                animation: none
+            }
+
+            .github-corner .octo-arm {
+                animation: octocat-wave 560ms ease-in-out
+            }
+        }
+
+        @media only screen and (max-width:680px) {
+            .github-corner>svg {
+                right: auto !important;
+                left: 0 !important;
+                transform: rotate(270deg) !important;
+            }
+        }
+    </style>
+    <!-- END Github Corner Ribbon - to remove -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
